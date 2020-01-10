@@ -1,45 +1,47 @@
 package com.app.model;
-
-import javax.persistence.*;
 import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "role")
 public class Role {
-	private Long id;
-	private String name;
-	 @ManyToMany(mappedBy = "roles")
-	private Set<User> users;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long getId() {
-		return id;
-	}
+    private String name;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
 
-	public String getName() {
-		return name;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	@ManyToMany(mappedBy = "roles")
-	public Set getUsers() {
-		return users;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setUsers(Set users) {
-		this.users = users;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/*public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 }

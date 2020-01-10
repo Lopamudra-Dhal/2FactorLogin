@@ -6,7 +6,7 @@ import java.util.Set;
 @Table(name = "user")
 public class User {
 	private Long id;
-	private String username;
+	private String userName;
 	private String password;
 	
 	@Transient
@@ -22,12 +22,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String username) {
+		this.userName = username;
 	}
 
 	public String getPassword() {
@@ -55,7 +55,7 @@ public class User {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(Set roles) {
 		this.roles = roles;
 	}
 
