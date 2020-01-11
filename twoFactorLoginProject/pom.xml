@@ -19,6 +19,7 @@
 		<java.version>1.8</java.version>
 		<passay.version>1.0</passay.version>
 		<guava.version>20.0</guava.version>
+		<aerogear.version>1.0.0</aerogear.version>
 	</properties>
 
 	<dependencies>
@@ -78,6 +79,11 @@
 			<artifactId>guava</artifactId>
 			<version>${guava.version}</version>
 		</dependency>
+		<dependency>
+    <groupId>org.jboss.aerogear</groupId>
+    <artifactId>aerogear-otp-java</artifactId>
+    <version>${aerogear.version}</version>
+</dependency>
 	</dependencies>
 	<build>
 		<plugins>

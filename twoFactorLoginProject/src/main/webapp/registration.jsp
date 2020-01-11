@@ -26,6 +26,12 @@
                     <form:errors path="userName"></form:errors>
                 </div>
             </spring:bind>
+             <spring:bind path="email">
+                <div class="form-group ${status.error ? 'has-error' : ''}">
+                    <form:input type="email" path="email" class="form-control" placeholder="Email"></form:input>
+                    <form:errors path="email"></form:errors>
+                </div>
+            </spring:bind>
 
             <spring:bind path="password">
                 <div class="form-group ${status.error ? 'has-error' : ''}">
@@ -41,7 +47,15 @@
                     <form:errors path="passwordConfirm"></form:errors>
                 </div>
             </spring:bind>
-
+            <%--  <spring:bind path="using2FA">
+                <div class="form-group ${status.error ? 'has-error' : ''}">
+                    <form:input type="checkbox" path="using2FA" class="form-control"
+                                placeholder="Use Two step verification" value="true"></form:input>
+                    <form:errors path="using2FA"></form:errors>
+                </div>
+            </spring:bind> --%>
+			Use Two step verification <input type="checkbox" name="using2FA" value="true"/>
+			</br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </form:form>
 
